@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roller Skating Tricks!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav style="margin-bottom: 30px;">
+    <a href="index.html" style="margin: 0 10px;">🏠 Home</a>
+    <a href="scratch.html" style="margin: 0 10px;">🛼 Scratch Page</a>
+    <a href="myresume.html" style="margin: 0 10px;">📄 Resume</a>
+    <a href="webapp.html" style="margin: 0 10px;">🎮 Web App</a>
+  </nav>
+
+  <h1 id="top">Roller Skating Tricks!</h1>
+
+  <!-- On-page anchor link -->
+  
+  <p><a href="#video">Jump to My Video</a></p>
+
+  <div class="box">
+    <h2>Trick List</h2>
+    <div class="trick-list">
+      <ol>
+        <li>Flips
+          <ul>
+            <li>Barani Flip</li>
+            <li>Backflip</li>
+            <li>Front Flip</li>
+            <li>Miller Flip</li>
+          </ul>
+        </li>
+        <li>Spins
+          <ul>
+            <li>540 Spin</li>
+            <li>720 Spin</li>
+          </ul>
+        </li>
+        <li>Grinds
+          <ul>
+            <li>Backside Grind</li>
+            <li>Soul Grind</li>
+            <li>Frontside Grind</li>
+            <li>50/50 Grind</li>
+          </ul>
+        </li>
+        <li>Balance Tricks
+          <ul>
+            <li>Handstand</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Photo of Me Skating</h2>
+    <img src="images/skating.jpg" alt="Skating action shot" width="600">
+  </div>
+
+  <div class="box" id="video">
+    <h2>My Skating Video</h2>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/OcgIBmTScPQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="box">
+    <h2>Roller Skating Trick Difficulty</h2>
+    <!-- Tableau Embed -->
+    <div class='tableauPlaceholder' id='viz1744069794973' style='position: relative'>
+      <noscript><a href='#'>
+        <img alt='Trick Difficulty' 
+             src='https://public.tableau.com/static/images/Ro/RollerSkatingTrickDifficultyMiaPeterson/Sheet1/1_rss.png' 
+             style='border: none' />
+      </a></noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='RollerSkatingTrickDifficultyMiaPeterson/Sheet1' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/Ro/RollerSkatingTrickDifficultyMiaPeterson/Sheet1/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+        <param name='filter' value='publish=yes' />
+      </object>
+    </div>
+    <script type='text/javascript'>
+      var divElement = document.getElementById('viz1744069794973');
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      vizElement.style.width = '100%';
+      vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+  </div>
+
+  <div class="box" style="background: linear-gradient(135deg, #fbeeff, #e0ccff); border: 2px dashed #c084fc;">
+    <h2 style="font-size: 28px;">🛼 Want a Trick Challenge?</h2>
+    <img src="images/skating.jpg" alt="Skating Icon" style="width: 150px; border-radius: 50%; margin-top: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+    <p style="font-size: 18px; margin-top: 15px;">
+      Launch the <strong>Skate Trick Recommender</strong> to get a random trick, check its difficulty level, and mark it as complete. It's the ultimate challenge app for real skaters!
+    </p>
+    <a href="webapp.html">
+      <button class="cool-button">🚀 Try the Skate Trick Recommender</button>
+    </a>
+  </div>
+  <div class="box">
+    <h2>📄 Check Out My Resume</h2>
+    <p>
+      Want to see my education, work, skills, and awards?
+      <br><br>
+      <a href="myresume.html" style="font-size: 18px; color: #8a2be2; font-weight: bold;">
+        👉 Click here to view my resume
+      </a>
+    </p>
+  </div>
+
+</body>
+</html>

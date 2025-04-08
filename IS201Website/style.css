@@ -1,0 +1,93 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #fbeeff, #e0ccff);
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #8a2be2;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #a64cf4;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+}
+
+.box {
+  border: 2px solid #f3ccff;
+  padding: 30px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+  max-width: 750px;
+}
+
+img {
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.cool-button {
+  background: linear-gradient(to right, #8a2be2, #c084fc);
+  color: white;
+  padding: 16px 32px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cool-button:hover {
+  background: #6c1bb9;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Trick list styling */
+.trick-list {
+  background-color: #fceeff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px #eccdf9;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.trick-list ol > li {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #8a2be2;
+}
+
+.trick-list ul {
+  list-style-type: circle;
+  margin-left: 20px;
+  color: #5a2e8a;
+}
