@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skate Trick Recommender</title>
+
+  <!-- Favicon (Roller Skate Icon) -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/685/685815.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Confetti + Sound -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <audio id="cheerSound" src="https://cdn.pixabay.com/download/audio/2021/10/20/audio_9f97d6c581.mp3?filename=small-crowd-cheering-4734.mp3"></audio>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom right, #fbeeff, #e0ccff);
+      background-image: url('https://www.transparenttextures.com/patterns/subtle-dots.png');
+      padding: 50px;
+      margin: 0;
+    }
+
+    .box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ccc;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    button {
+      background-color: #8a2be2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #6c1bb9;
+      transform: scale(1.05);
+    }
+
+    #result {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    #difficulty {
+      font-size: 18px;
+      color: gray;
+    }
+
+    #completedList {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .completed-trick {
+      background-color: #fbeeff;
+      border-left: 4px solid #c084fc;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #8a2be2;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>🛼 Skate Trick Recommender</h1>
+    <p>Click the button to get a random roller skating trick to try!</p>
+    
+    <button onclick="recommendTrick()">Give Me a Trick</button>
+    <div id="result"></div>
+    <div id="difficulty"></div>
+    
+    <button id="completeBtn" onclick="markCompleted()" style="display:none;">✔️ Mark as Completed</button>
+    <button onclick="resetApp()">🔄 Reset</button>
+
+    <div id="completedListContainer" style="display:none;">
+      <h3>✅ Completed Tricks</h3>
+      <div id="completedList"></div>
+    </div>
+
+    <a href="scratch.html">← Back to Scratch Page</a>
+  </div>
+
+  <script>
+    const tricks = [
+      { name: "Barani Flip", level: "Hard" },
+      { name: "Backflip", level: "Hard" },
+      { name: "Front Flip", level: "Hard" },
+      { name: "Miller Flip", level: "Hard" },
+      { name: "Handstand", level: "Medium" },
+      { name: "540 Spin", level: "Medium" },
+      { name: "720 Spin", level: "Hard" },
+      { name: "Soul Grind", level: "Medium" },
+      { name: "Frontside Grind", level: "Easy" },
+      { name: "Backside Grind", level: "Easy" },
+      { name: "50/50 Grind", level: "Easy" }
+    ];
+
+    let currentTrick = null;
+    const completed = [];
+
+    function recommendTrick() {
+      const index = Math.floor(Math.random() * tricks.length);
+      currentTrick = tricks[index];
+
+      document.getElementById("result").textContent = currentTrick.name;
+      document.getElementById("difficulty").textContent = `Difficulty: ${currentTrick.level}`;
+      document.getElementById("completeBtn").style.display = "inline-block";
+    }
+
+    function markCompleted() {
+      if (!currentTrick || completed.includes(currentTrick.name)) return;
+
+      completed.push(currentTrick.name);
+
+      const list = document.getElementById("completedList");
+      const item = document.createElement("div");
+      item.className = "completed-trick";
+      item.textContent = `${currentTrick.name} — ${currentTrick.level}`;
+      list.appendChild(item);
+
+      document.getElementById("completedListContainer").style.display = "block";
+      document.getElementById("completeBtn").style.display = "none";
+
+      // Confetti
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+
+      // Sound
+      const sound = document.getElementById("cheerSound");
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+    function resetApp() {
+      currentTrick = null;
+      document.getElementById("result").textContent = "";
+      document.getElementById("difficulty").textContent = "";
+      document.getElementById("completeBtn").style.display = "none";
+      document.getElementById("completedList").innerHTML = "";
+      document.getElementById("completedListContainer").style.display = "none";
+    }
+  </script>
+</body>
+</html>
